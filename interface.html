@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dockerfile Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Dockerfile Generator</h1>
+    <p>Fill in the options and get a ready-to-use Dockerfile</p>
+  </header>
+
+  <main class="container">
+
+    <!-- STEP 1: Choose base image -->
+    <div class="card">
+      <h2>1. Base Image</h2>
+      <select id="baseImage">
+        <option value="">-- Select a language --</option>
+        <option value="node:18-alpine">Node.js</option>
+        <option value="python:3.11-slim">Python</option>
+        <option value="nginx:alpine">Nginx</option>
+      </select>
+    </div>
+
+    <!-- STEP 2: App settings -->
+    <div class="card">
+      <h2>2. App Settings</h2>
+      <label>Working directory</label>
+      <input type="text" id="workdir" placeholder="/app" />
+
+      <label>Port to expose</label>
+      <input type="text" id="port" placeholder="3000" />
+    </div>
+
+    <!-- STEP 3: Commands -->
+    <div class="card">
+      <h2>3. Commands</h2>
+      <label>Install command</label>
+      <input type="text" id="installCmd" placeholder="npm install" />
+
+      <label>Start command</label>
+      <input type="text" id="startCmd" placeholder="npm start" />
+    </div>
+
+    <!-- Generate button -->
+    <button class="btn" onclick="generate()">Generate Dockerfile</button>
+
+    <!-- Output -->
+    <div class="card" id="outputCard" style="display:none;">
+      <h2>Your Dockerfile</h2>
+      <pre id="output"></pre>
+      <button class="btn secondary" onclick="copyToClipboard()">Copy</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Dockerfile Generator — beginner skeleton</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
