@@ -5,49 +5,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Webpage</title>
-
-  <!-- Link to external CSS file -->
+  <title>Dockerfile Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <header>
-    <h1>My First Webpage</h1>
-    <p>Built with HTML, CSS, and JavaScript</p>
+    <h1>Dockerfile Generator</h1>
+    <p>Fill in the options and get a ready-to-use Dockerfile</p>
   </header>
 
   <main class="container">
 
+    <!-- STEP 1: Choose base image -->
     <div class="card">
-      <h2>About this page</h2>
-      <p>This skeleton is your starting point. Edit the text, change colors in CSS, and add more cards below.</p>
+      <h2>1. Base Image</h2>
+      <select id="baseImage">
+        <option value="">-- Select a language --</option>
+        <option value="node:18-alpine">Node.js</option>
+        <option value="python:3.11-slim">Python</option>
+        <option value="nginx:alpine">Nginx</option>
+      </select>
     </div>
 
+    <!-- STEP 2: App settings -->
     <div class="card">
-      <h2>Try JavaScript</h2>
-      <p>Click the button — JavaScript updates the page without reloading.</p>
-      <button class="btn" onclick="handleClick()">Click me</button>
-      <div id="output">Nothing here yet...</div>
+      <h2>2. App Settings</h2>
+      <label>Working directory</label>
+      <input type="text" id="workdir" placeholder="/app" />
+
+      <label>Port to expose</label>
+      <input type="text" id="port" placeholder="3000" />
     </div>
 
+    <!-- STEP 3: Commands -->
     <div class="card">
-      <h2>User input</h2>
-      <p>Type your name and press the button:</p>
-      <input type="text" id="nameInput" placeholder="Your name" />
-      <button class="btn" onclick="greet()">Say hello</button>
-      <div id="greeting"></div>
+      <h2>3. Commands</h2>
+      <label>Install command</label>
+      <input type="text" id="installCmd" placeholder="npm install" />
+
+      <label>Start command</label>
+      <input type="text" id="startCmd" placeholder="npm start" />
+    </div>
+
+    <!-- Generate button -->
+    <button class="btn" onclick="generate()">Generate Dockerfile</button>
+
+    <!-- Output -->
+    <div class="card" id="outputCard" style="display:none;">
+      <h2>Your Dockerfile</h2>
+      <pre id="output"></pre>
+      <button class="btn secondary" onclick="copyToClipboard()">Copy</button>
     </div>
 
   </main>
 
   <footer>
-    <p>Start small. Build one thing at a time.</p>
+    <p>Dockerfile Generator — beginner skeleton</p>
   </footer>
 
-  <!-- Link to external JS file — always at the bottom of body -->
-  <script src="functions.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
