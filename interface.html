@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Webpage</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>My First Webpage</h1>
+    <p>Built with HTML, CSS, and JavaScript</p>
+  </header>
+
+  <main class="container">
+
+    <div class="card">
+      <h2>About this page</h2>
+      <p>This skeleton is your starting point. Edit the text, change colors in CSS, and add more cards below.</p>
+    </div>
+
+    <div class="card">
+      <h2>Try JavaScript</h2>
+      <p>Click the button — JavaScript updates the page without reloading.</p>
+      <button class="btn" onclick="handleClick()">Click me</button>
+      <div id="output">Nothing here yet...</div>
+    </div>
+
+    <div class="card">
+      <h2>User input</h2>
+      <p>Type your name and press the button:</p>
+      <input type="text" id="nameInput" placeholder="Your name" />
+      <button class="btn" onclick="greet()">Say hello</button>
+      <div id="greeting"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Start small. Build one thing at a time.</p>
+  </footer>
+
+  <!-- Link to external JS file — always at the bottom of body -->
+  <script src="functions.js"></script>
+
+</body>
+</html>
