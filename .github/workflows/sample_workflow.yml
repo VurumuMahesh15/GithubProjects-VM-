@@ -21,6 +21,9 @@ jobs:
       - name: checkout the repo
         uses: actions/checkout@v4
 
+      - name: list available files
+        run: ls -la
+
       - name: read the README
         run: cat README.md
 
