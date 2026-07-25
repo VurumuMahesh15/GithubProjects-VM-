@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Hello world in bash
         run: |
-          echo "Hellow world from bash"
+          echo "Hello world from bash"
           echo "whoami"
           echo "pwd"
           echo "ls"
@@ -21,12 +21,14 @@ jobs:
           echo "Job Variable: ${{ env.JOb_var }}"
   say_hello_in_c:
     runs-on: windows-latest
+    env:
+      JOb_var: "This is a job variable"
     steps:
       - name: Hello world in c
         env:
           step_var: "This is a step variable"
         run: |
-          echo "Hellow world from c"
+          echo "Hello world from c"
           echo "whoami"
           echo "pwd"
           echo "ls"
@@ -40,7 +42,7 @@ jobs:
     steps:
       - name: Hello world in python
         run: |
-          echo "Hellow world from python"
+          echo "Hello world from python"
           echo "whoami"
           echo "pwd"
           echo "ls"
