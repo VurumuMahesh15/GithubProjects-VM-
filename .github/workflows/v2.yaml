@@ -10,16 +10,17 @@ jobs:
             - name: bash
               run: |
                     echo "::group::Bash"
-                    echo "----------------------"
-                    echo "This is Bash"
-                    echo "Date: $(date)"
-                    echo "Time: $(date +%T)"
-                    echo "User: $(whoami)"
-                    echo "Current Directory: $(pwd)"
-                    echo "Files in Current Directory: $(ls)"
-                    echo "Current Process: $(ps)"
-                    echo "Thank you for using our service!"
-                    echo "----------------------"
+                    {
+                        echo "----------------------"
+                        echo "This is Bash"
+                        echo "Date: $(date)"
+                        echo "Time: $(date +%T)"
+                        echo "User: $(whoami)"
+                        echo "Current Directory: $(pwd)"
+                        echo "Files in Current Directory: $(ls)"
+                        echo "Current Process: $(ps)"
+                        echo "Thank you for using our service!"
+                        echo "----------------------"
                     } > report.txt
                     echo "::endgroup::"
             - name: upload report
