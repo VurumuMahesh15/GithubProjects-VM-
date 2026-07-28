@@ -1,4 +1,5 @@
-# Hi, I'm VM 👋
+# Hi, I'm VM(Vurumu Mahesh)👋
+But u can call me VM39
 
 Final-year engineering student (2026 batch) focused on **Platform Engineering** and **SRE**, currently preparing for campus placements.
 
@@ -13,7 +14,7 @@ Final-year engineering student (2026 batch) focused on **Platform Engineering** 
 **Infra & Cloud:** GCP · Terraform · Docker · GitHub Actions · Cloud Monitoring/Logging
 **Policy & Security:** OPA/Rego · Conftest · tfsec
 **Languages:** Python · Bash · C
-**Backend/Web:** FastAPI · React · TypeScript
+**Database:** SQL . Redis
 
 ## 💼 Experience
 
@@ -24,21 +25,13 @@ Built AI-NIMS, a PWA for NIMS Hyderabad's Cardiothoracic Surgery department — 
 
 Platform Engineering / SRE roles at companies including Adobe, Deloitte, Genpact, PayPal, IBM, Visa, and Mastercard.
 
-## 📊 GitHub Stats
+## 📊 GitHub Contribution Heatmap
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=VurumuMahesh15&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VurumuMahesh15&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=VurumuMahesh15&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=VurumuMahesh15&theme=react-dark&hide_border=true" />
+  <img src="https://ghchart.rshah.org/e64848/VurumuMahesh15" alt="VurumuMahesh15's contribution graph" />
 </p>
 
 ## 📫 Reach me
+Email:vgsvpmahesh@gmail.com
 
 Feel free to check out my pinned repos below, including my GitHub Actions CI/CD practice pipeline and the Policy-as-Code platform.
