@@ -1,0 +1,63 @@
+name: Deployment Report Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.ver.outputs.version }}
+    steps:
+      - id: ver
+        run: |
+          echo "version=$(date -u +%Y%m%d%H%M%S)-${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
+  report:
+    needs: version
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [dev, staging, prod]
+    runs-on: ubuntu-latest
+    environment: ${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate report
+        uses: ./.github/actions/generate-report
+        with:
+          env-label: ${{ matrix.environment }}
+          version: ${{ needs.version.outputs.version }}
+
+  combine:
+    needs: [version, report]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          pattern: report-*
+          merge-multiple: true
+          path: reports
+
+      - name: Combine reports
+        run: |
+          cat reports/report-*.txt > combined-report.txt
+
+      - name: Upload final report
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-report-${{ needs.version.outputs.version }}
+          path: combined-report.txt
