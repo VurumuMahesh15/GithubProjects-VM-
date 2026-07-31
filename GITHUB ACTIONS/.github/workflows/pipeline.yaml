@@ -61,7 +61,7 @@ jobs:
         with:
           name: deployment-report-${{ needs.version.outputs.version }}
           path: combined-report.txt
-  terraform_check:
+  terraform(tf)_check:
     runs-on: ubuntu-latest
     container:
       image: hashicorp/terraform:1.7
