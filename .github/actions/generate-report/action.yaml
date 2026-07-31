@@ -1,6 +1,5 @@
 name: 'Generate Deployment Report'
 description: 'Generates a deployment report for a given environment and uploads it as an artifact'
-
 inputs:
   env-label:
     description: 'Name of the environment this report is for (dev, staging, or prod)'
@@ -33,6 +32,13 @@ runs:
             ;;
         esac
 
+        # Gather runtime diagnostics
+        CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4"%"}')
+        CPU_CORES=$(nproc)
+        DISK_FREE=$(df -h / | awk 'NR==2 {print $4 " free of " $2 " (" $5 " used)"}')
+        OPEN_PORTS=$(ss -tuln | awk 'NR>1 {print $5}' | sed 's/.*://' | sort -nu | paste -sd, -)
+        RUNNER_OS_INFO=$(uname -a)
+
         {
           echo "================================"
           echo "DEPLOYMENT SUMMARY"
@@ -53,6 +59,14 @@ runs:
           echo "--------------------------------"
           echo "Infrastructure validated:  PASS (Terraform)"
           echo "Report generated:          PASS"
+          echo "--------------------------------"
+          echo "RUNTIME ENVIRONMENT (for developers)"
+          echo "--------------------------------"
+          echo "CPU usage:      $CPU_USAGE"
+          echo "CPU cores:      $CPU_CORES"
+          echo "Disk space:     $DISK_FREE"
+          echo "Open ports:     $OPEN_PORTS"
+          echo "Runner info:    $RUNNER_OS_INFO"
           echo "================================"
         } > report-${{ inputs.env-label }}.txt
 
