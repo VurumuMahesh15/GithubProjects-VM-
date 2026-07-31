@@ -61,3 +61,18 @@ jobs:
         with:
           name: deployment-report-${{ needs.version.outputs.version }}
           path: combined-report.txt
+  terraform_check:
+    runs-on: ubuntu-latest
+    container:
+      image: hashicorp/terraform:1.7
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Terraform fmt check
+        run: terraform -chdir=terraform fmt -check
+
+      - name: Terraform init
+        run: terraform -chdir=terraform init
+
+      - name: Terraform validate
+        run: terraform -chdir=terraform validate
