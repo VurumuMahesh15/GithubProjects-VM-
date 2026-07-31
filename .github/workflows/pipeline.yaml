@@ -76,3 +76,6 @@ jobs:
 
       - name: Terraform validate
         run: terraform -chdir=terraform validate
+
+      - name: Terraform apply
+        run: terraform -chdir=terraform apply -var="environment=${{ matrix.environment }}" -auto-approve
