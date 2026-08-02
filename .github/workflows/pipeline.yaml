@@ -63,6 +63,11 @@ jobs:
           path: combined-report.txt
   terraform_check:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [dev, staging, prod]
+    environment: ${{ matrix.environment }}
     container:
       image: hashicorp/terraform:1.7
     steps:
@@ -78,4 +83,17 @@ jobs:
         run: terraform -chdir=terraform validate
 
       - name: Terraform apply
-        run: terraform -chdir=terraform apply -var="environment=${{ matrix.environment }}" -auto-approve
+        env:
+          TF_VAR_environment: ${{ matrix.environment }}
+        run: terraform -chdir=terraform apply -auto-approve
+
+      - name: Terraform output (JSON)
+        run: terraform -chdir=terraform output -json > terraform/tf-output-${{ matrix.environment }}.json
+
+      - name: Upload Terraform output artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tf-output-${{ matrix.environment }}
+          path: |
+            terraform/deployment-record-${{ matrix.environment }}.txt
+            terraform/tf-output-${{ matrix.environment }}.json
