@@ -1,3 +1,6 @@
+# Multi-Environment Deployment Report Pipeline
+
+![Pipeline Status](https://github.com/VurumuMahesh15/GithubProjects-VM-/actions/workflows/pipeline.yaml/badge.svg)
 -------- FOLDER STRUCTURE ---------
 github-actions-deployment-pipeline/
 ├── .github/

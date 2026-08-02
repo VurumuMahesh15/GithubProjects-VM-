@@ -112,3 +112,13 @@ jobs:
           path: |
             terraform/deployment-record-${{ matrix.environment }}.txt
             terraform/tf-output-${{ matrix.environment }}.json
+
+      - name: Write terraform job summary
+        run: |
+          {
+            echo "## Terraform Check — ${{ matrix.environment }}"
+            echo ""
+            echo "- Format check: ✅"
+            echo "- Init: ✅"
+            echo "- Validate: ✅"
+          } >> "$GITHUB_STEP_SUMMARY"

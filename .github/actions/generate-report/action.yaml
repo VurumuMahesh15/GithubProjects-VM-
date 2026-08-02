@@ -75,3 +75,17 @@ runs:
       with:
         name: report-${{ inputs.env-label }}
         path: report-${{ inputs.env-label }}.txt
+    - name: Write job summary
+      shell: bash
+      run: |
+        {
+          echo "## Deployment Summary — ${{ inputs.env-label }}"
+          echo ""
+          echo "| Field | Value |"
+          echo "|---|---|"
+          echo "| Status | ✅ Success |"
+          echo "| Environment | ${{ inputs.env-label }} |"
+          echo "| Version | ${{ inputs.version }} |"
+          echo "| Commit | ${{ github.sha }} |"
+          echo "| Triggered by | ${{ github.actor }} |"
+        } >> "$GITHUB_STEP_SUMMARY"
