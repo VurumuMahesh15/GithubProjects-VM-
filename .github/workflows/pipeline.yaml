@@ -42,19 +42,34 @@ jobs:
           version: ${{ needs.version.outputs.version }}
 
   combine:
-    needs: [version, report]
+    needs: [version, report, terraform_check]
     runs-on: ubuntu-latest
     steps:
-      - name: Download all reports
+      - name: Download bash reports
         uses: actions/download-artifact@v4
         with:
           pattern: report-*
           merge-multiple: true
-          path: reports
+          path: all-outputs
+
+      - name: Download Terraform outputs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: tf-output-*
+          merge-multiple: true
+          path: all-outputs
 
       - name: Combine reports
         run: |
-          cat reports/report-*.txt > combined-report.txt
+          for file in all-outputs/*; do
+            {
+              echo "================================================"
+              echo "SOURCE: $(basename "$file")"
+              echo "================================================"
+              cat "$file"
+              echo
+            } >> combined-report.txt
+          done
 
       - name: Upload final report
         uses: actions/upload-artifact@v4
