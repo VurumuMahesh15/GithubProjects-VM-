@@ -31,6 +31,12 @@ Platform Engineering / SRE roles at companies including Adobe, Deloitte, Genpact
   <img src="https://ghchart.rshah.org/e64848/VurumuMahesh15" alt="VurumuMahesh15's contribution graph" />
 </p>
 
+## ⌨️ Typing Stats
+
+[monkeytype.badge]: https://img.shields.io/endpoint?style=flat&url=https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
+
+[![monkeytype.badge]](https://monkeytype.com/profile/VurumuMahesh15)
+
 ## 📫 Reach me
 Email:vgsvpmahesh@gmail.com
 
