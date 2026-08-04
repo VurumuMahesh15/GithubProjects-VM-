@@ -1,0 +1,19 @@
+name: Monkeytype Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'   # runs weekly, every Sunday at midnight UTC
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: vnphanquang/monkeytype-readme@main
+        with:
+          monkeytype_api_key: ${{ secrets.MONKEYTYPE_API_KEY }}
+          mode: 'time'
+          mode2: '15'
+          style: 'flat'
+          label: 'monkeytype'
