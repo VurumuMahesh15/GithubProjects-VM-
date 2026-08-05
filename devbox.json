@@ -20,7 +20,6 @@
     "kustomize@latest",
     "nodejs_20@latest",
     "oras@latest",
-    "path:gcloud#google-cloud-sdk",
     "poetry@latest",
     "procps",
     "python312@latest",

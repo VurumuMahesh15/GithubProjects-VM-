@@ -4,6 +4,9 @@
 # devbox
 .devbox/
 
+# Go build output (devbox init_hook: go install cloud-provider-kind)
+bin/
+
 # Terraform
 .terraform/
 *.tfstate
