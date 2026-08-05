@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# Local files created by the workflow
+terraform/deployment-record-*.txt
+terraform/tf-output-*.json

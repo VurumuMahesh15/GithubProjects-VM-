@@ -32,10 +32,7 @@ Platform Engineering / SRE roles at companies including Adobe, Deloitte, Genpact
 </p>
 
 ## ⌨️ Typing Stats
-
-[monkeytype.badge]: https://img.shields.io/endpoint?style=flat&url=https://monkeytype-badge-vhd5lan7mmhz.runkit.sh
-
-[![monkeytype.badge]](https://monkeytype.com/profile/Ha1se)
+Current best: 85 WPM · 96% accuracy (as of Aug 2026)
 
 ## 📫 Reach me
 Email:vgsvpmahesh@gmail.com
