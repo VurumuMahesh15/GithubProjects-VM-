@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# devbox
+.devbox/
+
 # Terraform
 .terraform/
 *.tfstate
