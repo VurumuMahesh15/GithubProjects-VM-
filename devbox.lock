@@ -97,6 +97,54 @@
         }
       }
     },
+    "cloud-provider-kind@latest": {
+      "last_modified": "2026-08-01T16:34:20Z",
+      "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#cloud-provider-kind",
+      "source": "devbox-search",
+      "version": "0.10.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rk0z5qwrji9y4f88s6lizxpwjlmkb0qf-cloud-provider-kind-0.10.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rk0z5qwrji9y4f88s6lizxpwjlmkb0qf-cloud-provider-kind-0.10.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6rxsgcwq8cnrps8cb4ga0whr00chsa06-cloud-provider-kind-0.10.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6rxsgcwq8cnrps8cb4ga0whr00chsa06-cloud-provider-kind-0.10.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/in8hdsfm3nj5n0s2g0yabnmymxlzgd52-cloud-provider-kind-0.10.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/in8hdsfm3nj5n0s2g0yabnmymxlzgd52-cloud-provider-kind-0.10.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mwaamgfmc8pmzz2c4wkm8s2gsfknnnry-cloud-provider-kind-0.10.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mwaamgfmc8pmzz2c4wkm8s2gsfknnnry-cloud-provider-kind-0.10.0"
+        }
+      }
+    },
     "envsubst@latest": {
       "last_modified": "2024-05-22T06:18:38Z",
       "resolved": "github:NixOS/nixpkgs/3f316d2a50699a78afe5e77ca486ad553169061e#envsubst",
@@ -242,54 +290,6 @@
             }
           ],
           "store_path": "/nix/store/pnyim2vhfwqh8bqrbd9vwbhqj1vsx2lx-go-task-3.43.2"
-        }
-      }
-    },
-    "go@latest": {
-      "last_modified": "2024-05-22T06:18:38Z",
-      "resolved": "github:NixOS/nixpkgs/3f316d2a50699a78afe5e77ca486ad553169061e#go",
-      "source": "devbox-search",
-      "version": "1.22.3",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/i04a1a6qgxhjw6c0ld2b3x1v815sbxjc-go-1.22.3",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/i04a1a6qgxhjw6c0ld2b3x1v815sbxjc-go-1.22.3"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/d68f2iblysnl0r4qcfdacmdpmvvy86kf-go-1.22.3",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/d68f2iblysnl0r4qcfdacmdpmvvy86kf-go-1.22.3"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/1p6vr83cgyfwm8517jhfmf6lypzhy3q2-go-1.22.3",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/1p6vr83cgyfwm8517jhfmf6lypzhy3q2-go-1.22.3"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/00mg4vlhzmm7gi9bd5v5ydjlgrywpc3n-go-1.22.3",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/00mg4vlhzmm7gi9bd5v5ydjlgrywpc3n-go-1.22.3"
         }
       }
     },
