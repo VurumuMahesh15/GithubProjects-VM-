@@ -14,7 +14,7 @@ Final-year engineering student (2026 batch) focused on **Platform Engineering** 
 **Infra & Cloud:** GCP · Terraform · Docker · GitHub Actions · Cloud Monitoring/Logging
 **Policy & Security:** OPA/Rego · Conftest · tfsec
 **Languages:** Python · Bash · C
-**Database:** SQL . Redis
+**Database:** SQL · Redis
 
 ## 💼 Experience
 
@@ -35,6 +35,6 @@ Platform Engineering / SRE roles at companies including Adobe, Deloitte, Genpact
 Current best: 85 WPM · 96% accuracy (as of Aug 2026)
 
 ## 📫 Reach me
-Email:vgsvpmahesh@gmail.com
+Email: vgsvpmahesh@gmail.com
 
-Feel free to check out my pinned repos below, including my GitHub Actions CI/CD practice pipeline and the Policy-as-Code platform.
+Feel free to check out my pinned repos below, including my [GitHub Actions CI/CD practice pipeline](GITHUB_ACTIONS_README.md) and the Policy-as-Code platform.
