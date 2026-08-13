@@ -17,3 +17,8 @@ bin/
 # Local files created by the workflow
 terraform/deployment-record-*.txt
 terraform/tf-output-*.json
+configmap.yaml
+daemonset.yaml
+pod-with-configmap.yaml
+statefulset.yaml
+terraform-check-job.yaml
