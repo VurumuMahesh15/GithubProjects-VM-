@@ -122,3 +122,27 @@ jobs:
             echo "- Init: ✅"
             echo "- Validate: ✅"
           } >> "$GITHUB_STEP_SUMMARY"
+  k8s-policy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: ci-cluster
+
+      - name: Create namespaces
+        run: |
+          kubectl create namespace dev
+          kubectl create namespace staging
+          kubectl create namespace prod
+
+      - name: Apply Terraform check Job
+        run: kubectl apply -f job.yaml
+
+      - name: Wait for Job to complete
+        run: kubectl wait --for=condition=complete job/tf-check -n dev --timeout=60s
+
+      - name: Show Job logs
+        run: kubectl logs job/tf-check -n dev
