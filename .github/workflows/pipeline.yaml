@@ -131,7 +131,7 @@ jobs:
         uses: helm/kind-action@v1
         with:
           cluster_name: ci-cluster
-          config: kind-config.yaml
+          config: policy-enforcement/kind-config.yaml
 
       - name: Create namespaces
         run: |
@@ -140,7 +140,7 @@ jobs:
           kubectl create namespace prod
 
       - name: Apply Terraform check Job
-        run: kubectl apply -f job.yaml
+        run: kubectl apply -f policy-enforcement/job.yaml
 
       - name: Wait for Job to complete
         run: kubectl wait --for=condition=complete job/tf-check -n dev --timeout=60s
