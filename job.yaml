@@ -8,7 +8,15 @@ spec:
     spec:
       containers:
         - name: tf-validate
-          image: hashicorp/terraform:latest
-          command: ["sh", "-c", "terraform version && echo 'Validation logic goes here'"]
+          image: hashicorp/terraform:1.7
+          workingDir: /workspace/terraform
+          command: ["sh", "-c", "terraform init && terraform validate"]
+          volumeMounts:
+            - name: repo
+              mountPath: /workspace
       restartPolicy: Never
+      volumes:
+        - name: repo
+          hostPath:
+            path: /home/runner/work/GithubProjects-VM-/GithubProjects-VM-
   backoffLimit: 2
