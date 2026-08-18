@@ -145,5 +145,12 @@ jobs:
       - name: Wait for Job to complete
         run: kubectl wait --for=condition=complete job/tf-check -n dev --timeout=60s
 
+      - name: Debug - show pod status if failed
+        if: failure()
+        run: |
+          kubectl get pods -n dev
+          kubectl describe pod -n dev -l job-name=tf-check
+          kubectl logs -n dev -l job-name=tf-check --all-containers=true || true
+
       - name: Show Job logs
         run: kubectl logs job/tf-check -n dev
