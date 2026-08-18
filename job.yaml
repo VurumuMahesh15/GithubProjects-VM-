@@ -18,5 +18,5 @@ spec:
       volumes:
         - name: repo
           hostPath:
-            path: /home/runner/work/GithubProjects-VM-/GithubProjects-VM-
+            path: /workspace
   backoffLimit: 2
