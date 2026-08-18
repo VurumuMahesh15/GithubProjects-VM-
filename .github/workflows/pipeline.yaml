@@ -131,6 +131,7 @@ jobs:
         uses: helm/kind-action@v1
         with:
           cluster_name: ci-cluster
+          config: kind-config.yaml
 
       - name: Create namespaces
         run: |
