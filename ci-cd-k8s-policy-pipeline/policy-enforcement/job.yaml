@@ -10,7 +10,7 @@ spec:
         - name: policy-check
           image: openpolicyagent/conftest:latest
           workingDir: /workspace
-          command: ["sh", "-c", "conftest test terraform/*.tf --policy policy-enforcement/policies"]
+          command: ["sh", "-c", "conftest test ci-cd-k8s-policy-pipeline/terraform/*.tf --policy ci-cd-k8s-policy-pipeline/policy-enforcement/policies"]
           volumeMounts:
             - name: repo
               mountPath: /workspace

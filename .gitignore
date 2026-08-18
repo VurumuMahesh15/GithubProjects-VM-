@@ -22,3 +22,4 @@ daemonset.yaml
 pod-with-configmap.yaml
 statefulset.yaml
 terraform-check-job.yaml
+opa_practice/
