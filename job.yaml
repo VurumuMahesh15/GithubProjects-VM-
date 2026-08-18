@@ -7,10 +7,10 @@ spec:
   template:
     spec:
       containers:
-        - name: tf-validate
-          image: hashicorp/terraform:1.7
-          workingDir: /workspace/terraform
-          command: ["sh", "-c", "terraform init && terraform validate"]
+        - name: policy-check
+          image: openpolicyagent/conftest:latest
+          workingDir: /workspace
+          command: ["sh", "-c", "conftest test terraform/*.tf --policy policies"]
           volumeMounts:
             - name: repo
               mountPath: /workspace
