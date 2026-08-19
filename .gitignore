@@ -15,11 +15,12 @@ bin/
 *.tfvars.json
 
 # Local files created by the workflow
-terraform/deployment-record-*.txt
-terraform/tf-output-*.json
+ci-cd-k8s-policy-pipeline/terraform/deployment-record-*.txt
+ci-cd-k8s-policy-pipeline/terraform/tf-output-*.json
 configmap.yaml
 daemonset.yaml
 pod-with-configmap.yaml
 statefulset.yaml
 terraform-check-job.yaml
 opa_practice/
+terraform-key.json
